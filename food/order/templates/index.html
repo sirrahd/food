@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Food Results</title>
+ <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.1/css/bootstrap.min.css"> 
+</head>
+
+<body>
+<div class="container">
+<h1>Food</h1>
+<h4>Restaurant</h4>
+<p>{{restaurant.name}}, {{restaurant.city}}</p>
+<h4>Order</h4>
+<p>Total: ${{order.total}}</p>
+{% for menu in ordered_food.menu %}
+    <h5>&quot;{{menu}}&quot; Menu:</h5>
+    <ul class="unstyled">
+    {% for food in ordered_food.food %}
+        {% if food.menu_name == menu %}
+            <li>{{food.name}}</li>
+            {% if food.extra_count > 0 %}
+            <ul>
+                {% for subitem in food.extras %}
+                <li>{{subitem.name}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% endfor %}
+</div>
+</body>
+</html>

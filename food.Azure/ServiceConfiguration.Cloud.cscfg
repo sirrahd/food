@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="food.Azure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="2" osVersion="*" schemaVersion="2014-01.2.3">
+  <Role name="food">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=getfood;AccountKey=NctlW89lf2S4fTAYridKDhLcOqGzwPOGHookNigrdeZVnhzznxQfuBHe+s5gk9lZZuCFnx56tWGWJCg/qyzHaw==" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>
